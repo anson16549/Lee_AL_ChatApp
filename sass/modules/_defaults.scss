@@ -1,0 +1,28 @@
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.new-message {
+    background-color: #ff5b3c;
+    color: white;
+    border-radius: 8px;
+    float: left;
+    clear: both;
+    margin-top: 60px;
+}
+
+.my-message {
+    background-color: #ff2e65;
+    float: right;
+}
+
+// .background {
+//     width: 1100px;
+//     height: 200px;
+//     position: relative;
+//     background-color: rgb(187, 140, 140);
+//     margin-left: 380px;
+// }
