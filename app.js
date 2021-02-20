@@ -1,10 +1,8 @@
 const express = require('express');
 const path = require('path');
 const messenger = require('socket.io')();
+const userSocketIdMap = new Map();
 
-// let users = []; //
-
-// let messages = []; //
 
 
 
@@ -28,38 +26,39 @@ const server = app.listen(port, () => {
 //messanger is the connection manager - like a switchboard operator
 messenger.attach(server);
 
+// function addClientToMap(userName, socketId) {
+//     if (!userSocketIdMap.has(userName)) {
+//         //when user is joining first time
+//         userSocketIdMap.set(userName, new Set([socketId]));
+//     } else {
+//         //user had already joined from one client and now joining using another
+//         client
+//         userSocketIdMap.get(userName).add(socketId);
+//     }
+// }
+
+// function removeClientFromMap(userName, socketId) {
+//     if (userSocketIdMap.has(userName)) {
+//         let userSocketIdSet = userSocketIdMap.get(userName);
+//         userSocketIdSet.delete(socketID);
+//         //if there are no clients for a user, remove that user from online
+//         list(map)
+//         if (userSocketIdSet.size == 0) {
+//             userSocketIdMap.delete(userName);
+//         }
+//     }
+// }
 // socket is th individual connection - the caller
 messenger.on('connection', (socket) => {
     console.log(`a user connected: ${socket.id}`);
 
-    // socket.on('newuser', username => {
-    //     console.log(`${username} has arrived,`); //
-    //     socket.username = username; //
-    //     users.push(socket); //
-
-    //     messenger.emit('userOnline', socket.username);
-    // });
-
-    //     // socket.on('msg', msg => {
-    //     //     let message = {
-    //     //         index: index,
-    //     //         username: socket.username,
-    //     //         msg: msg
-    //     //     }
-    //     //     messages.push(message);
-    //     //     messenger.emit('msg', message);
-
-    //     //     index++;
-    // });
+    // addClientToMap(userName, socket.id); //
 
 
     //send the connected user their assigned ID
     socket.emit('connected', { sID: `${socket.id}`, message: 'new connection' });
 
-    // socket.emit('loggedIn', {
-    //     users: users.map(s => s.username),
-    //     messages: messages
-    // });
+
 
     socket.on('chatMessage', function(msg) {
         console.log(msg);
@@ -71,8 +70,7 @@ messenger.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         console.log('a user has disconnected')
-            // console.log(`${socket.id} has left,`); //
-            // messenger.emit("userLeft", socket.username);
-            // users.splice(users.indexOf(socket), 1);
-    }); //
+
+
+    });
 });

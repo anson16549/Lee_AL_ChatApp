@@ -11,21 +11,24 @@
 
 <body>
     <main id="app">
-        <img src="images/wootalk.png" alt="wootalk" width="100" height="100">
+        <div class="imagebox">
+            <img src="images/wootalk.png" alt="wootalk" width="100" height="100">
+        </div>
         <h2>Say something or we are giving up on you</h2>
 
         <!-- vue custom message components goes here-->
         <section class="messages">
-            <div class="backgroundBox"></div>
             <ul id="messages" v-for="message in messages">
                 <newmessage :msg="message" :socketid="socketID"></newmessage>
             </ul>
         </section>
-        <section class=" message-wrapper">
 
-            <textarea v-model="message " class="text-message">
+        <section class=" message-wrapper">
+            <div class="bar">
+                <textarea v-model="message " class="text-message">
                 </textarea>
-            <input @click.prevent="dispatchMessage" type="submit" value="send">
+                <input @click.prevent="dispatchMessage" type="submit" value="send">
+            </div>
         </section>
 
 

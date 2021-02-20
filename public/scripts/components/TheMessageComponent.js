@@ -4,11 +4,10 @@ export default {
     template: `
     <div class="background">
         <article class="new-message" :class="{ 'my-message' : matchedID }">
-        
-        <h1>This is a message</h1>
-        
-        <h4>{{msg.message.name}} says:</h4>
+        <h4>{{msg.message.name}}</h4>
         <p>{{msg.message.content}}</p>
+        
+        
         
         </article>
         </div>

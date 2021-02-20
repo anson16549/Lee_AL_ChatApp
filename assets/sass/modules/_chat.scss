@@ -1,23 +1,40 @@
-    #app {
-        background-image: url(../images/aaa.jpg);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        h2 {
-            text-align: center;
-        }
+#app {
+    background-image: url(../images/aaa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+    background-position: center;
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .imagebox {
+        text-align: center;
         img {
-            margin-left: 900px;
             margin-top: 50px;
         }
-        input {
-            margin-left: 1830px;
-            width: 50px;
-            height: 50px;
+    }
+}
+
+.message-wrapper {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    .bar {
+        display: flex;
+        flex: 1;
+        textarea {
+            flex: 1;
         }
     }
-    
-    .text-message {
-        margin-top: 650px;
-        width: 1800px;
-        height: 60px;
-    }
+}
+
+.background {
+    background-color: rgba(177, 164, 164, 0.3);
+    width: 610px;
+    height: 70px;
+    margin-left: 280px;
+    border-radius: 5px;
+}
