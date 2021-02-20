@@ -8,6 +8,7 @@
         text-align: center;
         margin-top: 30px;
         margin-bottom: 30px;
+        font-size: 20px;
     }
     .imagebox {
         text-align: center;
@@ -33,8 +34,52 @@
 
 .background {
     background-color: rgba(177, 164, 164, 0.3);
-    width: 610px;
+    width: 280px;
     height: 70px;
-    margin-left: 280px;
+    margin-left: 53px;
     border-radius: 5px;
+}
+
+@media screen and (min-width: 650px) {}
+
+@media screen and (min-width: 1024px) {
+    #app {
+        background-image: url(../images/aaa.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 1000px;
+        background-position: center;
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+        .imagebox {
+            text-align: center;
+            img {
+                margin-top: 50px;
+            }
+        }
+    }
+    .message-wrapper {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        .bar {
+            display: flex;
+            flex: 1;
+            textarea {
+                flex: 1;
+            }
+        }
+    }
+    .background {
+        background-color: rgba(177, 164, 164, 0.3);
+        width: 610px;
+        height: 70px;
+        margin-left: 280px;
+        border-radius: 5px;
+    }
 }

@@ -1,7 +1,7 @@
 #webpage {
     background-image: url(../../images/aaaa.svg);
     background-repeat: no-repeat;
-    background-position: 280px -340px;
+    background-position: -70px -340px;
     background-size: 1300px 1100px;
     animation: fadeIn ease 5s;
     -webkit-animation: fadeIn ease 5s;
@@ -58,7 +58,7 @@
 //////////////////////////
 #welcome {
     h1 {
-        font-size: 50px;
+        font-size: 40px;
         text-align: center;
         margin-top: 190px;
         animation-duration: 0.8s;
@@ -76,7 +76,7 @@
     }
     ///////////////////////////
     h4 {
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
         margin-top: 220px;
         animation-duration: 0.8s;
@@ -84,7 +84,7 @@
     }
     @keyframes slideout {
         from {
-            margin-right: 100%;
+            margin-right: 10%;
             width: 300%;
         }
         to {
@@ -93,18 +93,132 @@
         }
     }
     .submit {
-        margin-left: 900px;
-        margin-top: 120px;
+        margin-left: 130px;
+        margin-top: 50px;
         height: 30px;
         text-align: center;
         width: 120px;
+        margin-bottom: 40px;
     }
     input {
         height: 130px;
-        margin-left: 850px;
-        margin-top: 120px;
+        margin-left: 78px;
+        margin-top: 60px;
         height: 30px;
         text-align: center;
         width: 220px;
+        border: 2px solid grey;
+        border-radius: 25px;
+    }
+}
+
+@media screen and (min-width: 650px) {}
+
+@media screen and (min-width: 1024px) {
+    #webpage {
+        background-image: url(../../images/aaaa.svg);
+        background-repeat: no-repeat;
+        background-position: -70px -340px;
+        background-size: 1300px 1100px;
+        animation: fadeIn ease 5s;
+        -webkit-animation: fadeIn ease 5s;
+        -moz-animation: fadeIn ease 5s;
+        -o-animation: fadeIn ease 5s;
+        -ms-animation: fadeIn ease 5s;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-moz-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-o-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-ms-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    //////////////////////////
+    #welcome {
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            margin-top: 190px;
+            animation-duration: 0.8s;
+            animation-name: slidein;
+        }
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+        ///////////////////////////
+        h4 {
+            font-size: 40px;
+            text-align: center;
+            margin-top: 220px;
+            animation-duration: 0.8s;
+            animation-name: slideout;
+        }
+        @keyframes slideout {
+            from {
+                margin-right: 10%;
+                width: 300%;
+            }
+            to {
+                margin-right: 0%;
+                width: 100%;
+            }
+        }
+        .submit {
+            margin-left: 10px;
+            margin-top: 120px;
+            height: 30px;
+            text-align: center;
+            width: 120px;
+        }
+        input {
+            height: 130px;
+            margin-left: 450px;
+            margin-top: 120px;
+            height: 30px;
+            text-align: center;
+            width: 220px;
+            border: 2px solid grey;
+            border-radius: 25px;
+        }
     }
 }
