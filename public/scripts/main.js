@@ -7,7 +7,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
     const socket = io();
 
     // messenger service event handling -> incoming from the manager
-    function setUserId(sID, message) {
+    function setUserId({ sID }, message) {
         //incoming connected event with data
 
         vm.socketID = sID;
@@ -42,4 +42,5 @@ import ChatMessage from "./components/TheMessageComponent.js"
 
     socket.addEventListener("connected", setUserId);
     socket.addEventListener('message', appendMessage);
+
 })();
