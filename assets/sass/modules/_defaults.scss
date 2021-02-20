@@ -17,13 +17,48 @@ body {
     border-radius: 8px;
     float: left;
     clear: both;
-    margin-top: 10px;
-    margin-left: 27px;
-    padding: 10px;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 5px;
+    margin-left: 16px;
 }
 
 .my-message {
     background-color: #ff2e65;
     float: right;
-    margin-right: 27px;
+    margin-right: 16px;
+    margin-top: 16px;
+}
+
+@media screen and (min-width: 650px) {}
+
+@media screen and (min-width: 1024px) {
+    * {
+        border: none;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        height: 100%;
+        min-width: 300px;
+        max-width: 1200px;
+    }
+    .new-message {
+        background-color: #ff5b3c;
+        color: white;
+        border-radius: 8px;
+        float: left;
+        clear: both;
+        margin-top: 10px;
+        margin-left: 27px;
+        padding: 10px;
+        font-size: 15px;
+    }
+    .my-message {
+        background-color: #ff2e65;
+        float: right;
+        margin-right: 27px;
+        margin-top: 14px;
+    }
 }
