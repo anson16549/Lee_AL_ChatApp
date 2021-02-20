@@ -25,8 +25,9 @@
 
             <textarea v-model="message " class="text-message">
                 </textarea>
+            <input @click.prevent="dispatchMessage" type="submit" value="send">
         </section>
-        <input @click.prevent="dispatchMessage" type="submit" value="send">
+
 
     </main>
 
