@@ -9,23 +9,30 @@
 </head>
 
 <body>
+
     <section id="webpage">
-        <main>
+        <main id="nickName">
             <div id="welcome">
                 <h1 class="title">Welcome to the WooTalk</h1>
 
                 <h4>Tell us your name</h4>
-                <input type="text" placeholder="NAME">
+                <input type="text" placeholder="NAME" v-model="nickname">
 
-                <a href="/chat">
+                <!-- <textarea v-model="nickname" class="text-message">
+                </textarea> -->
+                <input @click.prevent="dispatchName" type="submit" value="send">
+
+                <!-- <a href="/chat">
                     <input class="submit" type="submit" value="Join">
-                </a>
+                </a> -->
                 <!-- <input type="submit" value="JOIN">-->
                 <!-- temp hack to bypass login-->
                 <!--<a href="/chat">to chat page</a>-->
             </div>
         </main>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="module" defer src="scripts/name.js"></script>
 </body>
 
 </html>

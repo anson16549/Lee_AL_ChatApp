@@ -58,19 +58,22 @@ messenger.on('connection', (socket) => {
     //send the connected user their assigned ID
     socket.emit('connected', { sID: `${socket.id}`, message: 'new connection' });
 
-
-
     socket.on('chatMessage', function(msg) {
         console.log(msg);
         messenger.emit('message', { id: socket.id, message: msg });
-
-
-
     });
 
     socket.on('disconnect', () => {
         console.log('a user has disconnected')
 
 
+    });
+
+    socket.on('newNickname', function(data) {
+        console.log(data)
+        socket.broadcast.emit('message', {
+            id: socket.id,
+            message: { content: data.nickname + ' has joined the chat' }
+        });
     });
 });

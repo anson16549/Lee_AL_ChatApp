@@ -3,13 +3,23 @@ import ChatMessage from "./components/TheMessageComponent.js"
 (() => {
     console.log('fired')
 
+    var url = window.location.search;
+    url = url.replace("?", '');
+    var nickname
+    if (url.length > 10) {
+        nickname = url.substring(9);
+
+    } else {
+        nickname = "Anonymous"
+    }
+
     // load the socket libery and make a connection
     const socket = io();
 
     // messenger service event handling -> incoming from the manager
     function setUserId({ sID }, message) {
         //incoming connected event with data
-
+        socket.emit('newNickname', { nickname: nickname })
         vm.socketID = sID;
     }
 
@@ -30,8 +40,8 @@ import ChatMessage from "./components/TheMessageComponent.js"
         },
         methods: {
             dispatchMessage() {
-
-                socket.emit('chatMessage', { content: this.message, name: this.nickname || "Anonymous" });
+                console.log(this);
+                socket.emit('chatMessage', { content: this.message, name: nickname || "Anonymous" });
                 this.message = "";
             }
         },
@@ -39,6 +49,8 @@ import ChatMessage from "./components/TheMessageComponent.js"
             newmessage: ChatMessage
         }
     }).$mount("#app");
+
+
 
     socket.addEventListener("connected", setUserId);
     socket.addEventListener('message', appendMessage);
